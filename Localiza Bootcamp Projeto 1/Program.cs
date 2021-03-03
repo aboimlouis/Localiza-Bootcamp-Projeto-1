@@ -152,11 +152,12 @@ namespace Localiza_Bootcamp_Projeto_1
 
             // FORMA FINAL
             int idxOrigin = Accounts.FindIndex(x => x.Name == nameOrigin);
-            int idxDestination = Accounts.FindIndex(x => x.Name == nameOrigin);
+            int idxDestination = Accounts.FindIndex(x => x.Name == nameDestination);
             if (idxOrigin >= 0 && idxDestination >= 0)
             {
                 Accounts[idxOrigin].Transfer(amount, Accounts[idxDestination]);
             }
+            else Console.WriteLine("Account not found!");
 
             Console.WriteLine();
         }
@@ -170,6 +171,7 @@ namespace Localiza_Bootcamp_Projeto_1
 
             int idxName = Accounts.FindIndex(x => x.Name == name);
             if (idxName >= 0) Accounts[idxName].Withdraw(amount);
+            else Console.WriteLine("Account not found!");
 
         }
         private static void DepositOption()
@@ -182,6 +184,7 @@ namespace Localiza_Bootcamp_Projeto_1
             
             int idxName = Accounts.FindIndex(x => x.Name == name);
             if (idxName >= 0) Accounts[idxName].Deposit(amount);
+            else Console.WriteLine("Account not found!");
 
         }
     }
